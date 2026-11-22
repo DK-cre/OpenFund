@@ -1,0 +1,64 @@
+openfund/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── ProjectCard.jsx
+│   │   │   ├── ProgressBar.jsx
+│   │   │   ├── WalletConnect.jsx
+│   │   │   └── PaymentSelector.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Explore.jsx
+│   │   │   ├── CreateProject.jsx
+│   │   │   ├── Support.jsx
+│   │   │   └── Transparency.jsx
+│   │   │
+│   │   ├── features/
+│   │   │   ├── wallet/
+│   │   │   ├── payments/
+│   │   │   ├── barter/
+│   │   │   └── verification/
+│   │   │
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── adapters/
+│   │   ├── middleware/
+│   │   └── server.js
+│   └── package.json
+│
+├── contracts/
+│   ├── contracts/
+│   ├── scripts/
+│   ├── test/
+│   └── hardhat.config.js
+│
+├── database/
+│   └── schema.prisma
+│
+├── docs/
+│   ├── architecture.md
+│   ├── api.md
+│   ├── smart-contracts.md
+│   └── security.md
+│
+├── .env.example
+├── README.md
+└── package.json

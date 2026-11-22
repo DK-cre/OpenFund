@@ -1,0 +1,299 @@
+# OPENFUND — DEVELOPMENT IMPLEMENTATION BRIEF
+
+You are a senior full-stack software architect and developer.
+
+Your task is to implement the OpenFund platform according to the supplied technical specification, design references, and project structure.
+
+## 1. Main objective
+
+Build a responsive global crowdfunding and resource-exchange web application.
+
+The platform must support:
+- Project creation and discovery
+- Cryptocurrency contribution demonstrations
+- Contribution history
+- Milestone-based project funding
+- Transparency and verification
+- Barter and resource exchange
+- NFC contribution demonstrations
+
+The first version is an MVP. Prioritize maintainable architecture, security, and a working frontend.
+
+## 2. Required technology stack
+
+Frontend:
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- shadcn/ui
+- React Router
+- Recharts
+
+Backend:
+- Node.js
+- Express
+- PostgreSQL
+- Prisma ORM
+
+Blockchain:
+- Solidity
+- Hardhat
+- ethers.js
+- OpenZeppelin Contracts
+
+Storage:
+- IPFS-compatible storage
+- SHA-256 content hashes
+
+Development blockchain:
+- Ethereum Sepolia testnet
+
+## 3. Project structure
+
+Create the following repository structure:
+
+openfund/
+  frontend/
+    public/
+    src/
+      assets/
+      components/
+        common/
+        navigation/
+        projects/
+        payments/
+        transparency/
+        forms/
+      pages/
+        Home/
+        ExploreProjects/
+        CreateProject/
+        SupportExchange/
+        Transparency/
+      hooks/
+      context/
+      services/
+      utils/
+      styles/
+      App.jsx
+      main.jsx
+    package.json
+    vite.config.js
+
+  backend/
+    src/
+      config/
+      controllers/
+      routes/
+      services/
+      middleware/
+      validators/
+      adapters/
+        payments/
+        blockchain/
+        storage/
+      utils/
+      app.js
+      server.js
+    package.json
+
+  contracts/
+    contracts/
+      ProjectRegistry.sol
+      Crowdfunding.sol
+      MilestoneEscrow.sol
+      Verification.sol
+    scripts/
+    test/
+    hardhat.config.js
+    package.json
+
+  database/
+    prisma/
+      schema.prisma
+      migrations/
+
+  docs/
+    architecture.md
+    api.md
+    database.md
+    smart-contracts.md
+    security.md
+    development-plan.md
+
+  .env.example
+  .gitignore
+  README.md
+
+You may improve this structure when technically justified, but document every significant change.
+
+## 4. Five main pages
+
+Implement these pages:
+
+1. Home
+2. Explore Projects
+3. Create Project
+4. Support & Exchange
+5. Transparency & Verification
+
+Use the supplied UI/UX designs as the primary visual reference.
+
+Do not arbitrarily change the design system.
+
+## 5. Development rules
+
+- Use reusable React components.
+- Keep frontend, backend, and blockchain code separated.
+- Use clear naming conventions.
+- Avoid unnecessary dependencies.
+- Validate all user input.
+- Implement loading, error, success, and empty states.
+- Make the application responsive.
+- Use realistic demonstration data.
+- Never expose private keys or secret credentials.
+- Store configuration in environment variables.
+- Never store bank card details or wallet seed phrases.
+- Use exact monetary units and avoid floating-point calculations for financial amounts.
+
+## 6. Blockchain requirements
+
+Implement and test the smart contracts separately.
+
+The MVP should support:
+- Project registration
+- Contributions
+- Project balances
+- Milestones
+- Evidence submission
+- Milestone approval
+- Controlled fund release
+- Dispute initiation
+
+Use established OpenZeppelin components where appropriate.
+
+Do not deploy to mainnet during development.
+
+Do not introduce an administrator function that can arbitrarily withdraw project funds.
+
+Document access control, reentrancy protection, and the dispute-resolution process.
+
+## 7. Payment architecture
+
+Create a Payment Adapter Layer.
+
+Each payment provider must be implemented as a separate adapter.
+
+Required interface:
+
+- createPayment()
+- verifyPayment()
+- getPaymentStatus()
+
+Initially implement simulated payment adapters.
+
+Real card payments, mobile payments, bank transfers, and NFC terminal payments must only be integrated after choosing supported payment providers and completing their security and compliance requirements.
+
+NFC tags should open a project-specific contribution URL.
+
+## 8. Database
+
+Create Prisma models for:
+
+- User
+- Project
+- Category
+- Milestone
+- Contribution
+- Transaction
+- Evidence
+- Verification
+- Vote
+- BarterOffer
+- BarterDeal
+- Comment
+
+Define appropriate relationships, indexes, timestamps, and status fields.
+
+## 9. Implementation sequence
+
+Work in clearly separated phases.
+
+PHASE 1 — Project foundation
+- Create repository structure.
+- Configure frontend.
+- Configure backend.
+- Configure database.
+- Prepare documentation.
+
+PHASE 2 — Frontend
+- Implement all five pages.
+- Create reusable components.
+- Apply the supplied design.
+- Implement responsive layouts.
+- Add navigation and demonstration interactions.
+
+PHASE 3 — Backend
+- Create REST API.
+- Implement database models.
+- Implement project and contribution services.
+- Add validation and error handling.
+
+PHASE 4 — Blockchain
+- Implement Solidity contracts.
+- Write automated tests.
+- Deploy to a test network only after local tests pass.
+
+PHASE 5 — Integration
+- Connect frontend and backend.
+- Connect blockchain test environment.
+- Implement simulated payment adapters.
+- Add NFC demonstration.
+- Implement transparency data.
+
+PHASE 6 — Quality assurance
+- Test all five pages.
+- Test API endpoints.
+- Test database operations.
+- Test smart contracts.
+- Check mobile responsiveness.
+- Document limitations and known issues.
+
+## 10. Important working instructions
+
+Do not attempt to implement the entire platform in one operation.
+
+Start by analyzing the specification and producing an implementation plan.
+
+Then create the repository structure and a working frontend foundation.
+
+After each phase:
+- Explain what was implemented.
+- List the files created or changed.
+- Run relevant tests.
+- Report errors and unresolved issues.
+- Wait for approval before moving to a major architectural phase.
+
+Do not silently replace technologies or remove required features.
+
+Do not claim a feature is implemented if it is only a visual demonstration.
+
+Clearly distinguish simulated functions from real integrations.
+
+## 11. Definition of done
+
+The MVP is ready when:
+- All five pages work.
+- Navigation works.
+- Responsive layouts work.
+- Projects can be demonstrated and managed.
+- Contributions can be simulated.
+- NFC tag demonstration works.
+- Barter interface works.
+- Transparency dashboard displays consistent data.
+- Database and API are operational.
+- Smart contracts pass their tests on a local development network.
+- Documentation is complete.
+
+The architecture must allow future expansion without rebuilding the entire application.
